@@ -1,0 +1,32 @@
+<!-- 100-hbnb.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="static/scripts/100-hbnb.js"></script>
+</head>
+
+<body>
+    <div>
+        <h4>Locations</h4>
+        <ul>
+            {% for state in states %}
+            <li>
+                <input type="checkbox" data-id="{{state.id}}" data-name="{{state.name}}">
+                {{state.name}}
+                <ul>
+                    {% for city in state.cities %}
+                    <li>
+                        <input type="checkbox" data-id="{{city.id}}" data-name="{{city.name}}">
+                        {{city.name}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <button>Search</button>
+</body>
+
+</html>
