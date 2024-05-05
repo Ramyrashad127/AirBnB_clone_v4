@@ -1,0 +1,34 @@
+<!-- 101-hbnb.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="static/scripts/101-hbnb.js"></script>
+</head>
+
+<body>
+    <div>
+        <h4>Locations</h4>
+        <ul>
+            {% for state in states %}
+            <li>
+                <input type="checkbox" data-id="{{state.id}}" data-name="{{state.name}}">
+                {{state.name}}
+                <ul>
+                    {% for city in state.cities %}
+                    <li>
+                        <input type="checkbox" data-id="{{city.id}}" data-name="{{city.name}}">
+                        {{city.name}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <h2>Reviews <span id="toggle-reviews" style="cursor:pointer;">show</span></h2>
+    <div id="reviews"></div>
+    <button>Search</button>
+</body>
+
+</html>
